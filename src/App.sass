@@ -1,0 +1,352 @@
+@mixin dFlex($justifyContent,$alignItem)
+    display: flex
+    justify-content: $justifyContent
+    align-items: $alignItem
+
+$greytxt : #838383
+$yellowtxt : #FFA542
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+body
+    font-family: "Montserrat", sans-serif
+    background-color: #EAEAEA
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+.container
+    width: 1110px
+    margin: 0 auto
+
+nav
+    @include dFlex(space-between,center)
+    margin-bottom: 25px
+    margin-right: 20px
+    padding-top: 20px
+    .logo
+        text-decoration: none
+        font-weight: 700
+        font-size: 25px
+        color: #101010
+    .icons
+        @include dFlex(space-between,center)
+        position: relative
+        
+    .favIcon, .cartIcon
+        font-size: 27px
+        color: $greytxt
+    .totalCount
+        position: absolute
+        font-size: 12px
+        background-color: $yellowtxt
+        border-radius: 50%
+        padding: 2px 2px 3px 3px
+        width: 15px
+        height: 15px
+        text-align: center
+        top: -5px
+        right: -10px
+        color: #fff
+        font-weight: 400
+main
+    margin-top: 50px
+    margin-bottom: 100px
+    .productType
+        font-size: 20px
+        font-weight: 600
+        color: $greytxt
+        padding: 20px 0px
+    .wiredHeadphones, .wirelessHeadphones
+        @include dFlex(center,center)
+        flex-wrap: wrap
+        margin-top: 40px
+        margin-bottom: 40px
+        gap: 30px
+    .productCard
+        @include dFlex(space-between,center)
+        flex-direction: column
+        width: 350px
+        height: 405px
+        background-color: #fff
+        border-radius: 30px
+        gap: 30px
+        .productImg
+            width: 65%
+            display: block
+            margin-top: 12px
+        .productInfo
+            display: flex
+            justify-content: space-around
+            align-items: center
+            width: 100%
+            margin-bottom: 30px
+            gap: 10px
+
+            .productTitle-Rate
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+                gap: 15px
+                .productTitle
+                    font-size: 17px
+                    font-weight: 500
+                .productRate
+                    color: $greytxt
+                    .star
+                        color: $yellowtxt
+            .productPrice-Btn
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                gap: 15px
+                .productPrice
+                    color: $yellowtxt
+                    font-size: 17px
+                    font-weight: 700
+                    .rouble
+                        font-size: 15px
+                        font-weight: 700
+                button
+                    border-radius: 5px
+                    border: none
+                    background-color: #fff
+                    font-size: 17px
+                    font-weight: 700
+                    padding: 2px
+                    cursor: pointer
+                button:hover
+                    background-color: $yellowtxt
+    .cartPageTitle
+        font-size: 18px
+        font-weight: 600
+    .cartContainer
+        @include dFlex(space-between,start)
+        padding: 10px 0px
+        .cartProducts
+            @include dFlex(center,center)
+            flex-direction: column
+            gap: 40px
+        .cartElement
+            width: 635px
+            height: 220px
+            background-color: #fff
+            display: flex
+            flex-wrap: nowrap
+            align-items: center
+            position: relative
+            border-radius: 35px
+            .cartElImg-count
+                @include dFlex(center,center)
+                flex-direction: column
+                gap: 15px
+                .cartElementImg
+                    width: 65%
+                .countBtn
+                    display: flex
+                    gap: 20px
+                    .cartElementCount
+                        margin: auto 0
+                        font-weight: 600
+                    .addBtn, .subtractBtn
+                        background-color: $yellowtxt
+                        border: none
+                        border-radius: 50%
+                        font-size: 30px
+                        width: 40px
+                        height: 40px
+                        color: #fff
+                        font-weight: 400
+                        margin: auto
+            .cartElTitle-price
+                display: flex
+                flex-direction: column
+                gap: 13px
+                .cartElemenTitle
+                    font-size: 17px
+                    font-weight: 600
+                .cartElementPrice
+                    color: $greytxt
+                    font-size: 17px
+                    font-weight: 600
+            .cartElementTotal-del
+                position: absolute
+                right: 30px
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+                height: 100%
+                gap: 100px
+                .cartElementDelete
+                    border: none
+                    background-color: #fff
+                    font-size: 22px
+                    color: #DF6464
+                .cartElementTotalPrice
+                    color: #1C1C27
+                    font-weight: 600
+    .totalAndPayment
+        width: 350px
+        height: 120px
+        background-color: #fff
+        border-radius: 30px
+        @include dFlex(space-around,center)
+        flex-direction: column
+        .totalPrice
+            width: 100%
+            height: 50%
+            @include dFlex(space-around,center)
+            gap: 175px
+            font-weight: 600
+        .paymentBtn
+            display: block
+            width: 100%
+            height: 50%
+            border: none
+            color: #fff
+            background-color: #000
+            border-radius: 20px
+            font-size: 18px
+
+footer
+    height: 100px
+    @include dFlex(space-between,start)
+    margin-top: auto
+    padding: 35px
+    background-color: #fff
+    border-radius: 30px 30px 0px 0px
+    .logo
+        text-decoration: none
+        font-weight: 700
+        font-size: 25px
+        color: #101010
+    .menu, .service-lang
+        display: flex
+        flex-direction: column
+        gap: 20px
+        .footerFav, .footerCart, .footerContact, .footerService, span
+            text-decoration: none
+            color: #000
+            font-size: 17px
+            font-weight: 600
+
+    .socialNet
+        a
+            font-size: 30px
+            color: #000
+            margin-left: 20px
+.popup
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background-color: rgba(0, 0, 0, 0.2)
+    @include dFlex(center,center)
+    .popup-inner
+        position: relative
+        padding: 32px
+        width: 25%
+        background-color: #fff
+    .close-btn
+        position: absolute
+        top: 16px
+        right: 16px
+        font-size: 18px
+        font-weight: 900
+        border: none
+        background-color: #fff
+form
+    display: flex
+    flex-direction: column
+    label
+        font-size: 18px
+        font-weight: 600
+        margin: 0
+    input
+        margin: 20px
+        padding: 15px
+        font-size: 20px
+        border-radius: 7px
+        box-shadow: 2px 2px 2px 3px $greytxt
+    button
+        font-size: 18px
+        padding: 15px
+        width: 50%
+        margin: 0 auto
+        background-color: $yellowtxt
+        border-radius: 16px
+        box-shadow: 2px 2px 2px 3px #000
+
+
+@media (max-width: 575px)
+    .container
+        width: 550px
+        .cartContainer
+            width: 90%
+            flex-direction: column
+            gap: 30px
+            margin: 0 auto
+            .cartElement
+                width: 480px
+        .totalAndPayment
+            align-self: center
+        .popup-inner
+            width: 40%
+footer
+    padding: 20px
+    .socialNet a
+        font-size: 25px
+        margin-left: 10px
+
+
+@media (min-width:576px) and (max-width: 767px)
+    .container
+        width: 100%
+        .cartContainer
+            width: 90%
+            flex-direction: column
+            gap: 30px
+            margin: auto
+            .cartProducts 
+                width: 90%
+                align-self: center
+                .cartElement
+                    width: 90%
+        .totalAndPayment
+            align-self: center
+        .popup-inner
+            width: 40%
+
+@media (min-width:768px) and (max-width: 991px)
+    .container
+        width: 100%
+        .cartContainer
+            width: 90%
+            flex-direction: column
+            gap: 30px
+            margin: auto
+            .cartProducts 
+                width: 90%
+                align-self: center
+                .cartElement
+                    width: 90%
+        .totalAndPayment
+            align-self: center
+        .popup-inner
+            width: 40%
+    
+@media (min-width:992px) and (max-width: 1199px)
+    .container
+        width: 100%
+        .cartContainer
+            width: 90%
+            flex-direction: column
+            gap: 30px
+            margin: auto
+            .cartProducts 
+                width: 90%
+                align-self: center
+                .cartElement
+                    width: 90%
+        .totalAndPayment
+            align-self: center
+        .popup-inner
+            width: 40%

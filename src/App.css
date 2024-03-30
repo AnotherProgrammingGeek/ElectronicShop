@@ -1,38 +1,444 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #EAEAEA;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.container {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 25px;
+  margin-right: 20px;
+  padding-top: 20px;
+}
+nav .logo {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 25px;
+  color: #101010;
+}
+nav .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+nav .favIcon, nav .cartIcon {
+  font-size: 27px;
+  color: #838383;
+}
+nav .totalCount {
+  position: absolute;
+  font-size: 12px;
+  background-color: #FFA542;
+  border-radius: 50%;
+  padding: 2px 2px 3px 3px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  top: -5px;
+  right: -10px;
+  color: #fff;
+  font-weight: 400;
+}
+
+main {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+main .productType {
+  font-size: 20px;
+  font-weight: 600;
+  color: #838383;
+  padding: 20px 0px;
+}
+main .wiredHeadphones, main .wirelessHeadphones {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  gap: 30px;
+}
+main .productCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  height: 405px;
+  background-color: #fff;
+  border-radius: 30px;
+  gap: 30px;
+}
+main .productCard .productImg {
+  width: 65%;
+  display: block;
+  margin-top: 12px;
+}
+main .productCard .productInfo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+main .productCard .productInfo .productTitle-Rate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+main .productCard .productInfo .productTitle-Rate .productTitle {
+  font-size: 17px;
+  font-weight: 500;
+}
+main .productCard .productInfo .productTitle-Rate .productRate {
+  color: #838383;
+}
+main .productCard .productInfo .productTitle-Rate .productRate .star {
+  color: #FFA542;
+}
+main .productCard .productInfo .productPrice-Btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+main .productCard .productInfo .productPrice-Btn .productPrice {
+  color: #FFA542;
+  font-size: 17px;
+  font-weight: 700;
+}
+main .productCard .productInfo .productPrice-Btn .productPrice .rouble {
+  font-size: 15px;
+  font-weight: 700;
+}
+main .productCard .productInfo .productPrice-Btn button {
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 2px;
+  cursor: pointer;
+}
+main .productCard .productInfo .productPrice-Btn button:hover {
+  background-color: #FFA542;
+}
+main .cartPageTitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+main .cartContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 10px 0px;
+}
+main .cartContainer .cartProducts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+main .cartContainer .cartElement {
+  width: 635px;
+  height: 220px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: relative;
+  border-radius: 35px;
+}
+main .cartContainer .cartElement .cartElImg-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+main .cartContainer .cartElement .cartElImg-count .cartElementImg {
+  width: 65%;
+}
+main .cartContainer .cartElement .cartElImg-count .countBtn {
+  display: flex;
+  gap: 20px;
+}
+main .cartContainer .cartElement .cartElImg-count .countBtn .cartElementCount {
+  margin: auto 0;
+  font-weight: 600;
+}
+main .cartContainer .cartElement .cartElImg-count .countBtn .addBtn, main .cartContainer .cartElement .cartElImg-count .countBtn .subtractBtn {
+  background-color: #FFA542;
+  border: none;
+  border-radius: 50%;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-weight: 400;
+  margin: auto;
+}
+main .cartContainer .cartElement .cartElTitle-price {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+main .cartContainer .cartElement .cartElTitle-price .cartElemenTitle {
+  font-size: 17px;
+  font-weight: 600;
+}
+main .cartContainer .cartElement .cartElTitle-price .cartElementPrice {
+  color: #838383;
+  font-size: 17px;
+  font-weight: 600;
+}
+main .cartContainer .cartElement .cartElementTotal-del {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  gap: 100px;
+}
+main .cartContainer .cartElement .cartElementTotal-del .cartElementDelete {
+  border: none;
+  background-color: #fff;
+  font-size: 22px;
+  color: #DF6464;
+}
+main .cartContainer .cartElement .cartElementTotal-del .cartElementTotalPrice {
+  color: #1C1C27;
+  font-weight: 600;
+}
+main .totalAndPayment {
+  width: 350px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+main .totalAndPayment .totalPrice {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 175px;
+  font-weight: 600;
+}
+main .totalAndPayment .paymentBtn {
+  display: block;
+  width: 100%;
+  height: 50%;
+  border: none;
+  color: #fff;
+  background-color: #000;
+  border-radius: 20px;
+  font-size: 18px;
 }
 
-.App-link {
-  color: #61dafb;
+footer {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: auto;
+  padding: 35px;
+  background-color: #fff;
+  border-radius: 30px 30px 0px 0px;
+}
+footer .logo {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 25px;
+  color: #101010;
+}
+footer .menu, footer .service-lang {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+footer .menu .footerFav, footer .menu .footerCart, footer .menu .footerContact, footer .menu .footerService, footer .menu span, footer .service-lang .footerFav, footer .service-lang .footerCart, footer .service-lang .footerContact, footer .service-lang .footerService, footer .service-lang span {
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+}
+footer .socialNet a {
+  font-size: 30px;
+  color: #000;
+  margin-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup .popup-inner {
+  position: relative;
+  padding: 32px;
+  width: 25%;
+  background-color: #fff;
+}
+.popup .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 18px;
+  font-weight: 900;
+  border: none;
+  background-color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+form label {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+form input {
+  margin: 20px;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px 3px #838383;
+}
+form button {
+  font-size: 18px;
+  padding: 15px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #FFA542;
+  border-radius: 16px;
+  box-shadow: 2px 2px 2px 3px #000;
+}
+
+@media (max-width: 575px) {
+  .container {
+    width: 550px;
   }
-  to {
-    transform: rotate(360deg);
+  .container .cartContainer {
+    width: 90%;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto;
+  }
+  .container .cartContainer .cartElement {
+    width: 480px;
+  }
+  .container .totalAndPayment {
+    align-self: center;
+  }
+  .container .popup-inner {
+    width: 40%;
   }
 }
+footer {
+  padding: 20px;
+}
+footer .socialNet a {
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+  .container .cartContainer {
+    width: 90%;
+    flex-direction: column;
+    gap: 30px;
+    margin: auto;
+  }
+  .container .cartContainer .cartProducts {
+    width: 90%;
+    align-self: center;
+  }
+  .container .cartContainer .cartProducts .cartElement {
+    width: 90%;
+  }
+  .container .totalAndPayment {
+    align-self: center;
+  }
+  .container .popup-inner {
+    width: 40%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 100%;
+  }
+  .container .cartContainer {
+    width: 90%;
+    flex-direction: column;
+    gap: 30px;
+    margin: auto;
+  }
+  .container .cartContainer .cartProducts {
+    width: 90%;
+    align-self: center;
+  }
+  .container .cartContainer .cartProducts .cartElement {
+    width: 90%;
+  }
+  .container .totalAndPayment {
+    align-self: center;
+  }
+  .container .popup-inner {
+    width: 40%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 100%;
+  }
+  .container .cartContainer {
+    width: 90%;
+    flex-direction: column;
+    gap: 30px;
+    margin: auto;
+  }
+  .container .cartContainer .cartProducts {
+    width: 90%;
+    align-self: center;
+  }
+  .container .cartContainer .cartProducts .cartElement {
+    width: 90%;
+  }
+  .container .totalAndPayment {
+    align-self: center;
+  }
+  .container .popup-inner {
+    width: 40%;
+  }
+}/*# sourceMappingURL=App.css.map */
